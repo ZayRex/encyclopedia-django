@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create new page
+{% endblock %}
+
+{% block body %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<form method="post" action="{% url 'wiki:create_new_page' %}">
+  {% csrf_token %}
+    <label for="title">Title:</label>
+    <br>
+    <input name="title" placeholder="new title">
+    <br>
+    <label for="page_content">Page content:</label>
+    <br>
+    <textarea name="page_content" placeholder="Page content"></textarea>
+    <br>
+    <input type="submit" value="Create">
+  </form>
+{% endblock %}

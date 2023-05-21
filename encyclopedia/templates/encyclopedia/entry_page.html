@@ -4,6 +4,13 @@
     {{title|safe}}
 {% endblock %}
 
+{% block nav %}
+<br>
+<div>
+    <a href="{% url 'wiki:edit_page' %}">Edit Page</a>
+</div>
+{% endblock %}
+
 {% block body %}
     {{page_content|safe}}
 {% endblock %}
