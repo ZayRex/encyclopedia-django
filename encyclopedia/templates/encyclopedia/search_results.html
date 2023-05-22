@@ -9,6 +9,6 @@
     <h3>"{{ query }}" search results:</h3>
     {% for match in potential_matches %}
     <li><a href="{% url 'wiki:entry_page' match %}">{{ match }}</a></li>
-</ul>
     {% endfor %}
+</ul> 
 {% endblock %}
